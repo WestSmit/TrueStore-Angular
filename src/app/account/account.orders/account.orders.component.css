@@ -1,0 +1,10 @@
+.image-wraper{
+    height: 140px;
+       
+ }
+ .product-img{  
+   max-height: 120px;
+   top: 50%;
+   transform: translateY(-50%);
+
+ }

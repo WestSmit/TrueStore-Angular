@@ -1,0 +1,21 @@
+input.ng-untouched {
+    background-color: whitesmoke;
+}
+input.ng-touched.ng-invalid {
+    background-color: rgba(255, 0, 43, 0.13);
+}
+input.ng-touched.ng-valid {
+   background-color: rgba(0, 255, 76, 0.13);
+}
+input[type="submit"]:disabled{
+    background-color: lightgrey;
+}
+.input-label {
+    font-size: 8.5pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.bg-main{
+    background-color: #87cae9;
+ }

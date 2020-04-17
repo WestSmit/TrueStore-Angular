@@ -1,0 +1,89 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  }
+ .modal-window{
+    min-height: 510px;
+ }
+ .color-main{
+    color: #87cae9;
+ }
+ 
+button{
+    background-color: white;
+    
+ }
+ button:hover{
+    background-color: #b7daeb;
+ }
+ a{
+    background-color: white;
+    text-decoration: none;
+    color: #87cae9;
+    
+ }
+ a:hover{
+    background-color: #b7daeb;
+    color: white;
+ }
+ .link{
+   background: none;
+   text-decoration: none;
+   color: white;
+ }
+ .link:hover{
+   background: none;
+   color: #b7daeb;
+}
+.badge-custom{
+   position: absolute;
+   margin-right: -8px;
+   margin-top: -8px;
+   padding: 0.25em 0.45em;
+   text-align: center;
+   vertical-align: middle;
+}
+.notifications{
+   display: none;
+   margin-top: 45px;
+   padding-top: 20px;
+   position: absolute;
+   min-height: 100px;
+   width: 300px;
+   z-index: 3;
+}
+.category-item {
+   padding: 1em;
+   display: block;
+   border-bottom: 1px solid lavender;
+}
+.category-item:hover{
+   padding-right: 0.5em;
+}
+
+.subcategory-item {
+   padding: 0.4em;
+   display: block;
+   border-bottom: 1px solid lavender;
+}
+.subcategory-item:hover{
+   padding-right: 0.5em;
+}
+
+::ng-deep .mat-form-field-wrapper {
+   padding: 0px !important;
+ }
+::ng-deep .mat-form-field-underline {
+   display: none !important;
+ }
+ .search-input{
+    font-size: 18px !important;
+    font-weight: lighter;
+ }

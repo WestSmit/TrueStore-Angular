@@ -1,0 +1,90 @@
+<div class="border mb-2" *ngFor="let order of userOrders">
+    <div class="row m-0 p-0">
+        <div class="small col-12 col-lg-7 m-0 bg-light m-0 justify-content-center pt-1 border-bottom">
+            {{order.date}}
+        </div>
+        <div class="alert-danger  justify-content-center pt-1 col-6 col-lg-2 border-bottom text-center"
+            *ngIf="order.status == 'NotPaid'">
+            Not Paid
+        </div>
+        <div class="alert-primary justify-content-center pt-1 col-6 col-lg-2 border-bottom text-center"
+            *ngIf="order.status == 'IsDelivered'">
+            Is Delivered
+        </div>
+        <div class="alert-secondary justify-content-center pt-1 col-6 col-lg-2 border-bottom text-center"
+            *ngIf="order.status == 'Complited'">
+            Complited
+        </div>
+        <div class="m-0 col-6 col-lg-3 text-center alert-success justify-content-center border-bottom border-left">
+            <div class="h4 d-inline font-weight-normal m-0 ">{{order.totalCost}} </div>
+            <div class="d-inline text-muted small">{{order.items[0].currency}}</div>
+        </div>
+
+    </div>
+
+    <div class="row m-0 justify-content-center">
+        <div class="col-11 col-lg-9 p-2">
+            <div class="bg-white m-0 p-0 row justify-content-center justify-content-lg-start"
+                *ngFor="let item of order.items">
+                <div class="image-wraper media d-block p-0 col-11 col-lg-3 m-0">
+                    <img class="mx-auto d-block product-img col-auto p-0"
+                        src="../assets/imgs/{{item.product.previewImg}}" alt="{{item.product.name}}">
+                </div>
+                <div class=" col-11 col-lg-6 p-0">
+                    {{item.product.name}}
+                    <div class="text-muted">
+                        {{item.product.price}} &times; {{item.count}} = {{item.amount}} {{item.currency}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 bg-light m-0 p-3 border-left">
+            <button *ngIf="order.status =='IsDelivered'" class="btn btn-success btn-block" (click)="confirmDelivery(order.id)">
+                <i class="fa fa-check"></i>
+                Confirm delivered</button>
+            <button *ngIf="order.status =='NotPaid'" class="btn btn-primary btn-block disabled" routerLink="/Order/{{order.id}}">
+                <i class="fa fa-credit-card"></i>
+                Pay for order</button>
+            <button class="btn btn-light btn-block border disabled">
+                <i class="fa fa-cart-plus"></i>
+                Add to Cart</button>
+            <button class="btn btn-light btn-block border" (click)="deleteOrder(order.id)" *ngIf="order.status != 'IsDelivered'">
+                <i class="fa fa-trash-o text-danger"></i>
+                Delete</button>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="userOrders.length == 0" class="border">
+    <div class="row alert-warning m-0 p-0">
+        <div class="col-12 col-lg-7 m-0 bg-light m-0 justify-content-center border-bottom ">
+            <div class="w-50 btn btn-secondary disabled border-0 rounded-0 p-0 h-50"><br></div>
+        </div>
+        <div class="text-danger justify-content-center pt-1 col-6 col-lg-2 border-bottom text-center">
+            <br>
+        </div>
+        <div class="m-0 col-6 col-lg-3 text-center alert-success justify-content-center border-bottom border-left">
+        </div>
+    </div>
+    <div class="row m-0 justify-content-center">
+        <div class="col-11 col-lg-9 p-2">
+            <div class="bg-white m-0 p-0 row justify-content-center justify-content-lg-start">
+                <div class="image-wraper media d-block p-0 col-11 col-lg-3 m-0 pr-2">
+                    <div class="bg-light w-100 h-100 border"></div>
+                </div>
+                <div class=" col-11 col-lg-6 p-0">
+                    <div class="bg-light w-75 h-50 border"></div>
+                    <div class="text-muted bg-light w-50 h-25 mt-2 border">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 bg-light m-0 p-3 border-left">
+            <div class="btn btn-block btn-light border disabled"> <br></div>
+            <div class="btn btn-block btn-light border disabled"> <br></div>
+            <div class="btn btn-block btn-light border disabled"> <br></div>
+        </div>
+        <div class="text-danger position-absolute h1 font-weight-light h-100 w-100 text-center p-4">No orders</div>
+    </div>
+
+</div>

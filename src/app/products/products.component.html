@@ -1,0 +1,44 @@
+
+<div class="mt-4 row bg-light p-0 m-0">
+    <div class="col-lg-3 border-right p-0">
+
+    </div>
+    <div class="col-lg-9 ">
+        <div >
+            <h2 class="text-muted font-weight-light p-2">Sort options</h2>
+        </div>
+        <div class="row row-cols-4 justify-content-center border-top justify-content-lg-start">
+
+            <div class="col-11 col-sm-5 col-md-4 col-lg-3 p-2 product mb-0" *ngFor="let p of selectedProducts">
+                <div class="image-wraper media d-block p-0">
+                    <img class="mx-auto d-block product-img col-auto p-0" src="./assets/imgs/{{p.previewImg}}" alt="{{p.name}}">
+                </div>
+
+                <a class="product-title " href="#">
+                    {{p.name}}
+                </a>
+                <a class="small d-block mb-2">
+                    <i class="fa fa-comment-o"></i> reviews
+                </a>
+
+                <div class="float-left m-0">
+                    <div class="h3 d-inline font-weight-normal color-orange">{{p.price}} </div>
+                    <div class="d-inline font-weight-normal text-muted">{{p.currency}}</div>
+                    <div class="small font-weight-normal m-0 text-success">
+                        {{p.status}}
+                    </div>
+                </div>
+
+                <button class=" m-0 float-right p-2 product-btn" (click)="addProductToCart(p)"><i
+                        class="fa fa-2x fa-cart-plus"></i></button>
+            </div>
+
+            <div *ngIf="selectedProducts.length == 0" class="h4 font-weight-light text-muted p-3"> 
+                Items not found <i class="fa fa-frown-o"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

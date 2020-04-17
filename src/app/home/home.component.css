@@ -1,0 +1,26 @@
+ 
+button{
+   background-color: white;
+   
+}
+button:hover{
+   background-color: #b7daeb;
+}
+a{
+   background-color: white;
+   text-decoration: none;
+   color: #87cae9;
+   
+}
+a:hover{
+   background-color: #b7daeb;
+   color: white;
+}
+.category-item {
+   padding: 1em;
+   display: block;
+   border-bottom: 1px solid lavender;
+}
+.category-item:hover{
+   padding-right: 0.5em;
+}

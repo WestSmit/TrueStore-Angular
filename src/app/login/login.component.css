@@ -1,0 +1,25 @@
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 20px;
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  }
+ .modal-window{
+    background-color: white;
+}
+input.ng-touched.ng-invalid {
+    background-color: rgba(255, 0, 43, 0.13);
+}
+input.ng-touched.ng-valid {
+   background-color: rgba(0, 255, 76, 0.13);
+}
+input[type="submit"]:disabled{
+    background-color: lightgrey;
+}

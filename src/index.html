@@ -1,13 +1,52 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>TrueStore</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
+
+<body class="pr-lg-5 pl-lg-5 mat-typography" style="background: #87cae9;">
+  <header>
+    <nav class="navbar navbar-expand-md pt-3 pb-3 w-100">
+
+      <a class="navbar-brand ml-2 text-white" href="/">
+        <i class="fa fa-2x fa-fw fa-hand-spock-o"></i>
+        <h2 class="d-inline font-weight-normal">TrueStore</h2>
+      </a>
+
+      <button class="navbar-toggler collapsed mt-2 p-3 border rounded-circle" type="button" data-toggle="collapse"
+        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="fa fa-sm fa-chevron-down text-white"></span>
+      </button>
+
+      <div class="navbar-collapse collapse font-weight-light justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav d-flex flex-column-reverse flex-lg-row">
+          <li class="nav-item ">
+            <a class="nav-link text-light" href="#"> <i class="fa fa-fw fa fa fa-handshake-o"></i> Help &
+              Contact</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-light" href="#"> <i class="fa fa-fw fa fa-truck"></i> Delivery</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  
+  <app-root>
+
+    <div class="spinner-border text-center d-block m-5  m-auto text-white" role="status">
+    </div>
+
+  </app-root>
 </body>
+
 </html>
