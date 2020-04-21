@@ -21,6 +21,7 @@ export class NotificationService {
     {
       this._notifications = [];
     }
+    
   }
 
   addNotice(message:string, link?:string, linkName?:string){
@@ -29,6 +30,7 @@ export class NotificationService {
     $('.toast').toast('show');
   }
   deleteNotice(index:number){
-    this._notifications.splice(index,1);
+    this._notifications.splice(index,1);    
+    localStorage.setItem("Notices", JSON.stringify(this._notifications));    
   }
 }

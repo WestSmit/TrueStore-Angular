@@ -28,7 +28,7 @@
           <input class="mb-0 search-input" type="text" placeholder="Search" aria-label="Search"
             [formControl]="searchControl" [matAutocomplete]="auto" matInput>
           <mat-autocomplete #auto="matAutocomplete" class="mt-2">
-            <mat-option routerLink="Products/{{subc.id}}" *ngFor="let subc of subcategoryOptions">
+            <mat-option [routerLink]="['Products']" [queryParams]="{subcategoryId: subc.id}" *ngFor="let subc of subcategoryOptions">
               <i class="fa fa-fw fa-chevron-right"></i>
               <span >{{subc.name}}</span> 
             </mat-option>
@@ -130,7 +130,7 @@
         </div>
         <div class="col col-10 col-lg-7 bg-white m-lg-0 p-3 modal-window border-0 mt-2 mt-lg-2 m-auto" id="modal-window"
           (mouseleave)="hideMenu()" (mouseover)="showMenu()">
-          <a class="subcategory-item col-lg-4 col-12" routerLink="/Products/{{sc.id}}" [queryParams]="{'searchString':null}" routerLinkActive="active"
+          <a class="subcategory-item col-lg-4 col-12" [routerLink]="['Products']" [queryParams]="{subcategoryId: sc.id}" routerLinkActive="active"
             (click)="hideMenu()" *ngFor="let sc of subcategories" onclick="$('#multiCollapse').collapse('hide')">
             {{sc.name}}
           </a>

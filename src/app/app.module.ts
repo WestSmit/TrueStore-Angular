@@ -31,7 +31,7 @@ const accountRoutes: Routes = [
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'Home', component: HomeComponent },
-  { path: 'Products/:subcategoryId', component: ProductsComponent },
+  { path: 'Products', component: ProductsComponent },
   { path: 'Cart', component: CartComponent },
   { path: 'MyAccount', component: AccountComponent, children: accountRoutes },
   { path: 'Order/:orderId', component: OrderComponent,}

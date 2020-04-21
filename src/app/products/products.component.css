@@ -6,9 +6,15 @@
     
  }
  .product:hover{
-   box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+   
    z-index: 3;
+   animation: fadein 1s;
+   box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
  }
+ @keyframes fadein {
+   from { box-shadow: 0 0 100px rgba(0, 0, 0, 0);}
+   to   { box-shadow: 0 0 100px rgba(0, 0, 0, 0.3); }
+}
  .image-wraper{
     height: 220px;
        
@@ -69,6 +75,18 @@ a{
 a:hover{
    background-color: #b7daeb;
    color: white;
+}
+.common-link{
+   color: black;
+   background: none;
+   margin: 0.5em;
+}
+.common-link:hover{
+   text-decoration: underline;
+   color: black;
+   background: none;
+   cursor: pointer;
+
 }
 
 

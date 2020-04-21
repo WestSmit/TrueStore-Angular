@@ -1,11 +1,19 @@
 
 <div class="mt-4 row bg-light p-0 m-0">
-    <div class="col-lg-3 border-right p-0">
-
+    <div class="col-lg-3 border-right p-3">
+        <div class="border p-2" *ngIf="selectedSubcategories.length != 0">
+            <div class="text-muted border-bottom">Subcateroies</div>
+            <a *ngFor="let sc of selectedSubcategories" class="d-block common-link" (click)="selectCategory(sc.id)">{{sc.name}} </a>
+        </div>
+        <div class="border p-2 mt-2" *ngIf="selectedBrands.length != 0">
+            <div class="text-muted border-bottom">Brands</div>
+            <a *ngFor="let brand of selectedBrands" class="d-block common-link" (click)="selectBrand(brand.id)" >{{brand.name}} </a>
+        </div>
+        
     </div>
     <div class="col-lg-9 ">
-        <div >
-            <h2 class="text-muted font-weight-light p-2">Sort options</h2>
+        <div>
+            <div class="text-muted font-weight-light">Sort options</div>
         </div>
         <div class="row row-cols-4 justify-content-center border-top justify-content-lg-start">
 

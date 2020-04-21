@@ -6,12 +6,12 @@ import { User } from './models/user';
 import { Notice } from './models/notice';
 import { NotificationService } from './services/notification.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { SearchService } from './services/search.service';
 import { Category } from './models/category';
 import { Subcategory } from './models/subcategory';
 import { SearchResult } from './models/searchResult';
 import { Product } from './models/product';
 import { Router } from '@angular/router';
+import { ProductsService } from './services/products.service';
 
 interface Options {
   products: Product[];
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
     private cartService: CartService,
     private loginService: LoginService,
     private notificationService: NotificationService,
-    private searchService: SearchService,
+    private productService: ProductsService,
     private router: Router
   ) {
     this.currentUser = this.loginService.user;
@@ -67,9 +67,8 @@ export class AppComponent implements OnInit {
     if (value == "") {
       return;
     }
-    let result = await this.searchService.search(value, 0);
+    let result = await this.productService.getOptions(value);
     return result;
-
   }
 
   ngDoCheck() {
@@ -89,7 +88,7 @@ export class AppComponent implements OnInit {
 
   search() {
     this.router.navigate(
-      ['/Products', 0],
+      ['/Products'],
       {
         queryParams: {
           'searchString': this.searchControl.value,
