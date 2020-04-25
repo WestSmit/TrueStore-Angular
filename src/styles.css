@@ -1,15 +1,27 @@
+html, body { height: 100%; }
 body{
-    background: #87cae9;
     padding: 0;
     margin: 0; 
-    width: 100%;      
-    
+    width: 100%;  
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    color: var(--main-text-color);
+    --main-bg-color: #282a37;
+    --bg-darkshadow:#22232e;
+    --bg-lightshadow:#2e3140;
+    --main-text-color: #c6cedb;
+    --style-text-color: orange;
 }
 header{
-    background-color: #87cae9;
     padding: 0;
     margin: 0;
     display: block;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background: var(--main-bg-color);
+    background: linear-gradient(145deg, --bg-darkshadow, --bg-lightshadow);
+    box-shadow:  5px 5px 10px var(--bg-darkshadow), 
+             -5px -5px 10px var(--bg-lightshadow);
+    
 }
 .loading-label{
     display: block;
@@ -24,31 +36,61 @@ header{
     margin-top: 141px;
     height: 400px;
 }
-input{
-    background-color: white;
-    border: none;   
-    color: #87cae9;
-    outline: none;
-}
 button{
-    background-color: white;
-    
-    
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    box-shadow:  8px 8px 14px var(--bg-darkshadow), 
+             -8px -8px 14px var(--bg-lightshadow);
+    outline: none !important;
+    outline-style: none;
 }
 button:hover{
-    background-color: #b7daeb;
+    color: var(--style-text-color);
+    text-shadow: 1px 1px 2px var(--style-text-color);
+    box-shadow:  4px 4px 9px var(--bg-darkshadow), 
+             -4px -4px 9px var(--bg-lightshadow),             
+             inset 4px 4px 9px var(--main-bg-color),
+             inset -4px -4px 9px rgba(255, 166, 0, 0.04);
 }
 
 a{
     text-decoration: none;
-    color: #87cae9;
-    
+    color: var(--main-text-color) !important; 
+    background-color: transparent;   
+}
+a:hover{
+    color: var(--style-text-color) !important;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+.bg-color{
+    background-color: var(--main-bg-color) !important;
+}
+.color-light{
+    color: var(--main-text-color);
+}
+.color-style{
+    color: var(--style-text-color);
+}
+.btn-close{
+    border-radius: 14px;
+    display: block;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    box-shadow:  3px 3px 5px var(--bg-darkshadow),
+                -3px -3px 5px var(--bg-lightshadow);
+    border: none;
+    text-align: center;
+    color: tomato;
+    text-shadow: none;
+    font-size: 16pt;
  }
- a:hover{
-    color: white;
+ .btn-close:hover{
+    color: red;    
+    text-shadow: none;
+    box-shadow: 1px 1px 5px var(--bg-darkshadow),
+               -1px -1px 5px var(--bg-lightshadow),
+               inset 1px 1px 5px var(--bg-darkshadow),
+               inset -1px -1px 5px var(--bg-lightshadow);
  }
- 
- 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

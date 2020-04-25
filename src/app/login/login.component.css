@@ -9,10 +9,49 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: hidden; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    background-color: #282a37c2; /* Black w/ opacity */
   }
  .modal-window{
-    background-color: white;
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    box-shadow: 6px -6px 16px var(--bg-darkshadow),
+                -6px 6px 16px #ff950038; 
+}
+input{
+    background-color:  var(--main-bg-color) !important;    
+    box-shadow: inset 8px 8px 14px var(--bg-darkshadow), 
+             inset -8px -8px 14px var(--bg-lightshadow);
+    color: var(--main-text-color) !important; 
+    border: none !important;
+}
+input:focus{    
+    outline: none !important;
+    outline-style: none !important;
+    border: none !important;
+    color: var(--style-text-color) !important;
+    text-shadow: 1px 1px 2px var(--style-text-color);
+    box-shadow: inset 8px 8px 14px var(--bg-darkshadow), 
+                inset -8px -8px 14px rgba(255, 166, 0, 0.04);
+}
+input:-webkit-autofill {    
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+input:-webkit-autofill:focus {    
+    -webkit-animation-name: autofill-focus;
+    -webkit-animation-fill-mode: both;
+}
+@-webkit-keyframes autofill {
+    to {
+        color: var(--main-text-color);
+        background: transparent;
+    }
+}
+@-webkit-keyframes autofill-focus {
+    to {
+        color: var(--style-text-color);
+        background: transparent;
+    }
 }
 input.ng-touched.ng-invalid {
     background-color: rgba(255, 0, 43, 0.13);
@@ -20,6 +59,21 @@ input.ng-touched.ng-invalid {
 input.ng-touched.ng-valid {
    background-color: rgba(0, 255, 76, 0.13);
 }
-input[type="submit"]:disabled{
-    background-color: lightgrey;
+input[type="submit"]{
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    box-shadow:  9px 9px 16px var(--bg-darkshadow), 
+             -9px -9px 16px var(--bg-lightshadow),             
+             inset -4px -4px 9px var(--bg-darkshadow),
+             inset 4px 4px 9px var(--bg-lightshadow);
+    outline: none !important;
+    outline-style: none;
+}
+input[type="submit"]:hover{
+    color: var(--style-text-color) !important;
+    text-shadow: 1px 1px 2px var(--style-text-color);
+    box-shadow:  4px 4px 9px var(--bg-darkshadow), 
+             -4px -4px 9px var(--bg-lightshadow),             
+             inset 4px 4px 9px var(--main-bg-color),
+             inset -4px -4px 9px rgba(255, 166, 0, 0.04);
 }

@@ -1,9 +1,21 @@
 .image-wraper{
-    height: 140px;       
- }
- .product-img{  
-   max-height: 120px;
-   top: 50%;
-   transform: translateY(-50%);
-
- }
+  box-shadow: inset 6px 6px 10px var(--bg-darkshadow), 
+              inset -6px -6px 10px var(--bg-lightshadow);
+  padding: 10px;
+  border-radius: 12px; 
+       
+}
+.product-img{   
+  width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 2px 2px 2px var(--bg-darkshadow), 
+              -2px -2px 2px var(--bg-lightshadow);
+}
+.mainplace{
+  color: var(--main-text-color);
+  border-radius: 20px;
+  margin: 0;
+  box-shadow:  9px 9px 16px var(--bg-darkshadow), 
+           -9px -9px 16px var(--bg-lightshadow);
+}

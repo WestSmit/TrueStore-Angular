@@ -5,6 +5,8 @@ import { MustMatch } from '../helpers/mustMuch.validator';
 import { LoginService } from '../services/login.service';
 import { User } from "../models/user";
 
+declare var $: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +19,7 @@ export class LoginComponent implements OnInit {
   
 
   message: string = "";
+  errorMessage: string = "";
 
   constructor(private loginService: LoginService, private formBuilder: FormBuilder) { }
 
@@ -45,33 +48,44 @@ export class LoginComponent implements OnInit {
   get regForm() { return this.registerForm.controls; }
 
   async logIn() {
+    this.message = "";
+    this.errorMessage ="";
+
     if (this.loginForm.invalid) { return; }
-
+    
     var result = await this.loginService.logIn(this.loginForm.controls.userName.value,this.loginForm.controls.password.value);
-
     if (result) {
-      document.getElementById('SignInModal').style.display = 'none';
+      this.message = this.loginService.message;
       this.loginForm.reset();
     }
     else {
-      this.message = this.loginService.errors;
+      this.errorMessage = this.loginService.message;
     }
   }
 
   async SignUp() {
-
+    this.message = "";
+    this.errorMessage ="";
     if (this.registerForm.invalid) {
       return;
     }
-    var result = this.loginService.SingUp(this.registerForm.value);
+    var result = await  this.loginService.SingUp(this.registerForm.value);
     if (result) {
-      document.getElementById('SignUpModal').style.display = 'none';
-      this.registerForm.reset();
+      this.message = this.loginService.message;
+      this.registerForm.reset();      
     }
     else {
-      this.message = this.loginService.errors;
+      this.errorMessage = this.loginService.message;
     }
-
-
+  }
+  closeSignInForm(){
+    $('#SignInModal').hide();
+    this.message ="";
+    this.errorMessage = "";
+  }
+  closeSignUpForm(){
+    $('#SignUpModal').hide();
+    this.message ="";
+    this.errorMessage = "";
   }
 }

@@ -27,7 +27,6 @@ export class NotificationService {
   addNotice(message:string, link?:string, linkName?:string){
     this._notifications.push(new Notice(message, link, linkName));    
     localStorage.setItem("Notices", JSON.stringify(this._notifications));
-    $('.toast').toast('show');
   }
   deleteNotice(index:number){
     this._notifications.splice(index,1);    

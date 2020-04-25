@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
 import { NotificationService } from './notification.service';
+import { BaseModel } from '../models/baseModel';
 
 export interface UserResult {
   user: User;
@@ -21,7 +22,7 @@ export class LoginService {
   get user(): User {
     return this.currentUser;
   }
-  public errors: string = '';
+  public message: string = '';
 
   constructor(private http: HttpClient, private cookieService: CookieService, private notificationService: NotificationService) {
     this.currentUser = JSON.parse(localStorage.getItem('CurrentUser'));
@@ -29,7 +30,7 @@ export class LoginService {
     if (this.currentUser != undefined && this.currentUser != null) {
       this.loggedIn = true;
     }
-    else{
+    else {
       this.loggedIn = false;
     }
   }
@@ -43,14 +44,13 @@ export class LoginService {
       withCredentials: true
     };
     var model = await this.http.post<UserResult>(`${environment.apiUrl}User/Login`, body, httpOptions).toPromise();
+    this.message = model.message;
     if (model.successed == false) {
-      this.errors = model.message;
       this.loggedIn = false;
       return false;
     }
     else {
       this.currentUser = model.user;
-      this.errors = model.message;
       this.loggedIn = true;
       localStorage.setItem("CurrentUser", JSON.stringify(this.currentUser));
       this.notificationService.addNotice("Welcome!!! You can go to", "/MyAccount/Details", "account details")
@@ -66,9 +66,10 @@ export class LoginService {
     let httpOptions = {
       headers: headers
     };
-    var error = await this.http.post<string>(`${environment.apiUrl}User/Registration`, user, httpOptions).toPromise();
-    if (error != null) {
-      this.errors = error;
+    var result = await this.http.post<BaseModel>(`${environment.apiUrl}User/Registration`, user, httpOptions).toPromise();
+    console.log(result);
+    this.message = result.message;
+    if (result.successed != true) {
       this.loggedIn = false;
       return false;
     }

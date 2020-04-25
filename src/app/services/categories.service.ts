@@ -24,7 +24,7 @@ export class CategoriesService {
   showMenu() {
     var modal = document.getElementById("myModal");
     
-    modal.style.paddingTop = (148 - window.scrollY) + "px";
+    modal.style.paddingTop = (146 - window.scrollY) + "px";
     document.body.style.overflow = 'hidden';
     
     var menu = document.getElementById("categoriesMenu");

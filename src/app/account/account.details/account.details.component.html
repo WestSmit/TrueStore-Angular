@@ -26,7 +26,7 @@
                 placeholder="Phone number X XXX XXX XX XX" formControlName="phoneNumber">
 
             <input [disabled]="infoForm.invalid || infoForm.pristine"
-                class="btn btn-block btn-primary mt-3 rounded-pill border" type="submit" value="Save">
+                class="btn btn-block mt-3 rounded-pill" type="submit" value="Save">
         </form>
     </div>
 
@@ -49,7 +49,7 @@
                 formControlName="email">
 
             <input [disabled]="emailForm.invalid || emailForm.pristine"
-                class="btn btn-block btn-primary mt-3 rounded-pill border" type="submit" value="Change">
+                class="btn btn-block  mt-3 rounded-pill" type="submit" value="Change">
         </form>
     </div>
     <div class="font-weight-bold">Password</div>
@@ -75,7 +75,7 @@
             <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Again"
                 formControlName="confirmPassword">
 
-            <input [disabled]="passwordForm.invalid" class="btn btn-block btn-primary mt-3 rounded-pill border"
+            <input [disabled]="passwordForm.invalid" class="btn btn-block mt-3 rounded-pill"
                 type="submit" value="Change">
         </form>
     </div>

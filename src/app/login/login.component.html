@@ -1,15 +1,18 @@
 <div id="SignInModal" class="modal pt-lg-5 pt-2">
-  <div class="modal-window col-11 col-lg-3 m-auto rounded p-2 shadow-lg bg-light mt-lg-5 mt-0">
-    <button type="button" class="close text-danger align-top text-center" aria-label="Close"
-      onclick="document.getElementById('SignInModal').style.display = 'none'">
+  <div class="modal-window col-11 col-lg-3 m-auto p-2 mt-lg-5 mt-0">
+    <button type="button" class="btn-close float-right" aria-label="Close"
+      (click)="closeSignInForm()">
       <span aria-hidden="true">&times;</span>
     </button>
-    <div class="m-4 text-danger text-center">
+    <div class="m-4 text-success text-center">
       {{message}}
     </div>
-    <form class="form-signin col-11 text-center m-auto pb-4" [formGroup]="loginForm" (ngSubmit)="logIn()">
-      <i class="fa fa-3x fa-fw fa-hand-spock-o text-info"></i>
-      <h1 class="h3 mb-3 font-weight-normal text-info">Please sign in</h1>
+    <div class="m-4 text-danger text-center">
+      {{errorMessage}}
+    </div>
+    <form class="col-11 text-center m-auto pb-4" [formGroup]="loginForm" (ngSubmit)="logIn()">
+      <i class="fa fa-3x fa-fw fa-hand-spock-o color-style"></i>
+      <h1 class="h3 mb-3 font-weight-normal color-style">Please sign in</h1>
 
       <label for="inputEmail" class="sr-only">Username</label>
       <input type="text" class="form-control rounded-pill mb-3" formControlName="userName" placeholder="Username" autofocus>
@@ -17,22 +20,25 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" class="form-control rounded-pill" formControlName="password" placeholder="Password">
 
-      <input [disabled]="loginForm.invalid" class="btn btn-block btn-primary mt-3 rounded-pill border" type="submit" value="LogIn">
+      <input [disabled]="loginForm.invalid" class="btn-block mt-3 rounded-pill p-3" type="submit" value="LogIn">
     </form>
   </div>
 </div>
 
 <div id="SignUpModal" class="modal pt-lg-5 pt-2">
-  <div class="modal-window col-11 col-lg-4 m-auto rounded p-2 shadow-lg bg-light mt-lg-5 mt-0">
-    <button type="button" class="close text-danger align-top text-center" aria-label="Close"
-      onclick="document.getElementById('SignUpModal').style.display = 'none'">
+  <div class="modal-window col-11 col-lg-4 m-auto p-2 mt-lg-5 mt-0">
+    <button type="button" class="btn-close float-right" aria-label="Close"
+      (click)="closeSignUpForm()">
       <span aria-hidden="true">&times;</span>
     </button>
     <div class="m-4 text-danger text-center">
+      {{errorMessage}}
+    </div>
+    <div class="m-4 text-success text-center">
       {{message}}
     </div>
     <form class="col-11 text-center m-auto pb-3 pt-0" [formGroup]="registerForm" (ngSubmit)="SignUp()">
-      <h1 class="h3 mb-2 font-weight-normal text-info mb-3">Create account</h1>
+      <h1 class="h3 mb-2 font-weight-normal color-style mb-3">Create account</h1>
 
       <label for="inputFirstName" class="sr-only">Firstname</label>
       <input type="text" id="inputFirstName" class="form-control rounded-pill mb-3" placeholder="Firstname"
@@ -63,7 +69,7 @@
         formControlName="confirmPassword">
 
       <input [disabled]="registerForm.invalid" type="submit" value="SingUp"
-        class="btn btn-block btn-primary mt-2 rounded-pill">
+        class="btn btn-block btn-primary mt-3 rounded-pill">
     </form>
   </div>
 </div>

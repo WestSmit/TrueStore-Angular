@@ -1,12 +1,12 @@
 <div class="row p-0 m-0">
-    <div class="col col-lg-3 col-sm-12 p-0 border-0 order-last order-lg-first bg-white">
+    <div class="col col-lg-3 col-sm-12 p-0 border-0 order-last order-lg-first bg-color categoriesMenu">
 
         <div class="d-none d-lg-block" id="categoriesMenu" (mouseover)="showMenu()"
             (mouseleave)="hideMenu()">
             <a class="category-item" id="categoryItem" *ngFor="let category of categories"
                 (mouseover)="getSubcategories(category.id)">
                 {{category.name}}
-                <i class="fa fa-fw fa fa-chevron-right float-right pt-1 color-green"></i>
+                <i class="fa fa-chevron-right float-right pt-1 icon-shadow p-2 text-center .icon-shadow"></i>
             </a>
         </div>
     </div>
@@ -53,4 +53,4 @@
         </div>
     </div>
 </div>
-<div class="text-center h4 w-100 mt-3 text-white p-3 border-top">Popular Products</div>
+<div class="text-center h4 w-100 mt-3 p-3 border-top border-dark color-light">Popular Products</div>
