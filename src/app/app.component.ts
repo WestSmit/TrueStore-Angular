@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
     this.numberInCart = this.cartService.getTotalQuantity();
     this.subcategories = this.categoriesService.subcategories;
     this.currentUser = this.loginService.user;
-    this.isLoggedIn = this.loginService.loggedIn;    
+    this.isLoggedIn = this.loginService.loggedIn;
     this.notices = this.notificationService.notifications;
   }
 
@@ -87,14 +87,17 @@ export class AppComponent implements OnInit {
   }
 
   search() {
-    this.router.navigate(
-      ['/Products'],
-      {
-        queryParams: {
-          'searchString': this.searchControl.value,
+    if (this.searchControl.value && this.searchControl.value != " ") {
+      this.router.navigate(
+        ['/Products'],
+        {
+          queryParams: {
+            'searchString': this.searchControl.value,
+          }
         }
-      }
-    );
+      );
+    }
+
   }
 
   logOut() {

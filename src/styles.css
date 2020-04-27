@@ -6,8 +6,8 @@ body{
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     color: var(--main-text-color);
     --main-bg-color: #282a37;
-    --bg-darkshadow:#22232e;
-    --bg-lightshadow:#2e3140;
+    --bg-darkshadow:#1e202d;
+    --bg-lightshadow:#323441;
     --main-text-color: #c6cedb;
     --style-text-color: orange;
 }
@@ -36,21 +36,22 @@ header{
     margin-top: 141px;
     height: 400px;
 }
-button{
+button,input[type="submit"]{
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
     box-shadow:  8px 8px 14px var(--bg-darkshadow), 
              -8px -8px 14px var(--bg-lightshadow);
     outline: none !important;
+    border: none;
     outline-style: none;
 }
-button:hover{
+button:hover,input[type="submit"]:hover{    
     color: var(--style-text-color);
     text-shadow: 1px 1px 2px var(--style-text-color);
     box-shadow:  4px 4px 9px var(--bg-darkshadow), 
-             -4px -4px 9px var(--bg-lightshadow),             
-             inset 4px 4px 9px var(--main-bg-color),
-             inset -4px -4px 9px rgba(255, 166, 0, 0.04);
+                -4px -4px 9px var(--bg-lightshadow),             
+                inset 4px 4px 9px var(--main-bg-color),
+                inset -4px -4px 9px rgba(255, 166, 0, 0.04);
 }
 
 a{

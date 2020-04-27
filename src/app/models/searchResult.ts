@@ -3,7 +3,13 @@ import { Subcategory } from './subcategory';
 import { Brand } from './brand';
 
 export class SearchResult {
-    public products: Product[];
-    public subcategories: Subcategory[];
-    public brands: Brand[];
+    public products= new Array<Product>();
+    public subcategories= new Array<Subcategory>();
+    public brands= new Array<Brand>();
+    public selectedBrands= new Array<number>();
+    public minPrice: number;
+    public maxPrice: number;
+    public setMinPrice: number;
+    public setMaxPrice: number;
+    
 }

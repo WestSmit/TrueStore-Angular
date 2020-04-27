@@ -1,36 +1,60 @@
-
 <div class="mt-4 row p-0 m-0 main">
     <div class="col-lg-3 p-3">
-        <div class="m-2 color-style">{{selectedProducts.length}} results</div>
-        <div class="border border-dark p-2" *ngIf="selectedSubcategories.length != 0">
+        <div class="m-2 color-style">{{searchResult.products.length}} results</div>
+        <div class="border border-dark p-2" *ngIf="searchResult.subcategories.length != 0">
             <div class="text-muted border-bottom border-dark">Subcateroies</div>
-            <a *ngFor="let sc of selectedSubcategories" class="d-block common-link" (click)="selectCategory(sc.id)">{{sc.name}} </a>
+            <a *ngFor="let sc of searchResult.subcategories" class="d-block common-link"
+                (click)="selectCategory(sc.id)">{{sc.name}} </a>
         </div>
-        <div class="border border-dark p-2 mt-2" *ngIf="selectedBrands.length != 0">
+        <div class="border border-dark p-2 mt-2" *ngIf="searchResult.brands.length != 0">
             <div class="text-muted border-bottom border-dark">Brands</div>
-            <a *ngFor="let brand of selectedBrands" class="d-block common-link" (click)="selectBrand(brand.id)" >{{brand.name}} </a>
+            <div class="form-check color-light" *ngFor="let item of filterBrandOptions">
+                <input class="align-middle m-2" type="checkbox" value="" id="{{'checkboxBrand' + item.value}}"
+                    [(ngModel)]="item.checked" (change)="brandsChanged()">
+                <label class="align-middle m-0" for="{{'checkboxBrand' + item.value}}">
+                    {{item.label}}
+                </label>
+            </div>
         </div>
-        
+        <span class="color-style mt-2">Price</span>
+        <span class="multi-range" [formGroup]="priceSlider">
+            <input type="range" min="{{searchResult.minPrice}}" max="{{searchResult.maxPrice}}" step="2"
+                value="{{searchResult.minPrice}}" formControlName="lower">
+            <input type="range" min="{{searchResult.minPrice}}" max="{{searchResult.maxPrice}}" step="2"
+                value="{{searchResult.maxPrice}}" formControlName="upper">
+        </span>
+        <form [formGroup]="priceRangeInput" class="form-row mt-4 justify-content-between mb-2" (ngSubmit)="setMinMaxPrice()">
+            <input type="number" formControlName="lower" max="{{searchResult.maxPrice}}" class="col-3 form-control"
+                (change)="priceRangeInputChanged()">
+            <input type="submit" class="col-3" value="Ok">
+            <input type="number" formControlName="upper" max="{{searchResult.maxPrice}}" class="col-3 form-control"
+                (change)="priceRangeInputChanged()">
+        </form>
+        <a class="text-muted" (click)="resetFilters()">Reset Filters</a>
+
     </div>
     <div class="col-lg-9">
-        <div class="row">
-            <div class="col-12 p-1 col-lg-3 d-flex">
-                <span class="p-1 pr-2 align-middle color-light">Sort by</span>
-                <select class="flex-fill p-1 pl-2 bg-dark rounded border-0 color-light">
-                    <option>Default</option>
-                    <option>Price: low to high</option>
-                    <option>Price: high to low</option>
-                  </select>
+        <div class="row p-2">
+            <div class="col-12 col-lg-3 d-flex">
+                <mat-form-field>
+                    <mat-label class="color-style">Sort By</mat-label>
+                    <mat-select [formControl]="sortControl">
+                        <mat-option value="default">Default</mat-option>
+                        <mat-option value="price_asce">Price: low to high</mat-option>
+                        <mat-option value="price_desc">Price: high to low</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
         </div>
         <div class="row row-cols-4 justify-content-center justify-content-lg-start">
 
-            <div class="col-11 col-sm-5 col-md-4 col-lg-3 p-2 product mb-0" *ngFor="let p of selectedProducts">
+            <div class="col-11 col-sm-5 col-md-4 col-lg-3 product mb-0 p-2" *ngFor="let p of searchResult.products">
                 <div class="image-wraper">
-                    <img class="mx-auto d-block product-img col-auto p-0" src="./assets/imgs/{{p.previewImg}}" alt="{{p.name}}">
+                    <img class="mx-auto d-block product-img col-auto p-0" src="./assets/imgs/{{p.previewImg}}"
+                        alt="{{p.name}}">
                 </div>
 
-                <a class="product-title ">
+                <a class="product-title">
                     {{p.name}}
                 </a>
                 <a class="small d-block mb-2">
@@ -49,7 +73,7 @@
                         class="fa fa-2x fa-cart-plus"></i></button>
             </div>
 
-            <div *ngIf="selectedProducts.length == 0" class="h4 font-weight-light text-muted p-3"> 
+            <div *ngIf="searchResult.products.length == 0" class="h4 font-weight-light text-muted p-3">
                 Items not found <i class="fa fa-frown-o"></i>
             </div>
 
