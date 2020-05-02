@@ -117,17 +117,16 @@ export class ProductsComponent implements OnInit {
     let minPrice: number = this.priceRangeInput.controls.lower.value;
     let maxPrice: number = this.priceRangeInput.controls.upper.value;
     this.router.navigate(
-      ['/Products'],
-      {
+      ['/Products'], {
         relativeTo: this.activateRoute,
         queryParams: { minPrice, maxPrice },
         queryParamsHandling: 'merge'
-      });
+      }
+    );
   }
-  resetFilters(){
+  resetFilters() {
     this.router.navigate(
-      ['/Products'],
-      {
+      ['/Products'],{
         relativeTo: this.activateRoute,
         queryParams: { 
           minPrice:null,
@@ -136,6 +135,18 @@ export class ProductsComponent implements OnInit {
           brands:null
         },
         queryParamsHandling: 'merge'
-      });
+      }
+    );
+  }
+  setPage(page: number) {
+    this.router.navigate(
+      ['/Products'], {
+        relativeTo: this.activateRoute,
+        queryParams: { 
+          page
+        },
+        queryParamsHandling: 'merge'
+      }
+    );
   }
 }
