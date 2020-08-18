@@ -19,8 +19,8 @@
 
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" class="form-control rounded-pill" formControlName="password" placeholder="Password">
-
-      <input [disabled]="loginForm.invalid" class="btn-block mt-3 rounded-pill p-3" type="submit" value="LogIn">
+      <div *ngIf="inProgress" class="spinner-border color-style m-2"></div>
+      <input *ngIf="!inProgress" [disabled]="loginForm.invalid" class="btn-block mt-3 rounded-pill p-3" type="submit" value="LogIn">
     </form>
   </div>
 </div>
@@ -37,7 +37,7 @@
     <div class="m-4 text-success text-center">
       {{message}}
     </div>
-    <form class="col-11 text-center m-auto pb-3 pt-0" [formGroup]="registerForm" (ngSubmit)="SignUp()">
+    <form class="col-11 text-center m-auto pb-3 pt-0" [formGroup]="registerForm" (ngSubmit)="signUp()">
       <h1 class="h3 mb-2 font-weight-normal color-style mb-3">Create account</h1>
 
       <label for="inputFirstName" class="sr-only">Firstname</label>
@@ -68,7 +68,9 @@
       <input type="password" id="inputConfirmPassword" class="form-control rounded-pill" placeholder="Confirm Password"
         formControlName="confirmPassword">
 
-      <input [disabled]="registerForm.invalid" type="submit" value="SingUp"
+      <div *ngIf="inProgress" class="spinner-border color-style m-2"></div>
+
+      <input *ngIf="!inProgress" [disabled]="registerForm.invalid" type="submit" value="SingUp"
         class="btn btn-block btn-primary mt-3 rounded-pill">
     </form>
   </div>
