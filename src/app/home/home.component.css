@@ -1,22 +1,21 @@
-
 .category-item {
-   padding: 1em;
-   display: block;
+  padding: 1em;
+  display: block;
 }
-.category-item:hover{
-   padding-right: 0.5em;
+.category-item:hover {
+  padding-right: 0.5em;
 }
-.categoriesMenu{
-   box-shadow:  -4px 4px 9px var(--bg-darkshadow);
+.categoriesMenu {
+  box-shadow: -4px 4px 9px var(--bg-darkshadow);
 }
-.icon-shadow{
-   border-radius: 14px;
-   padding-top: 7px;
-   margin-top: -3px !important;
-   display: block;
-   height: 28px;
-   width: 28px;
-   text-align: center;
-   box-shadow:  3px 3px 5px var(--bg-darkshadow),
-               -3px -3px 5px var(--bg-lightshadow);
+.icon-shadow {
+  border-radius: 14px;
+  padding-top: 7px;
+  margin-top: -3px !important;
+  display: block;
+  height: 28px;
+  width: 28px;
+  text-align: center;
+  box-shadow: 3px 3px 5px var(--bg-darkshadow),
+    -3px -3px 5px var(--bg-lightshadow);
 }

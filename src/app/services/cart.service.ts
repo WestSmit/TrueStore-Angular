@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Product } from '../models/product'
+import { Injectable } from "@angular/core";
+import { Product } from "../models/product";
 
 export class CartItem {
   product: Product;
@@ -12,28 +12,25 @@ export class CartItem {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class CartService {
-
   private cartItems: CartItem[] = [];
 
   constructor() {
-    let cart = JSON.parse(localStorage.getItem('Cart'));
-    if(cart != null){
-      this.cartItems= cart;
+    let cart = JSON.parse(localStorage.getItem("Cart"));
+    if (cart != null) {
+      this.cartItems = cart;
     }
-   }
+  }
 
   addToCart(product) {
-
-    if (this.cartItems.filter(a => a.product.id == product.id).length > 0) {
-      this.cartItems.find(a => a.product == product).count++;
-    }
-    else {
+    if (this.cartItems.filter((a) => a.product.id == product.id).length > 0) {
+      this.cartItems.find((a) => a.product == product).count++;
+    } else {
       this.cartItems.push(new CartItem(product, 1));
     }
-    localStorage.setItem("Cart",JSON.stringify(this.cartItems));
+    localStorage.setItem("Cart", JSON.stringify(this.cartItems));
   }
 
   getItems() {
@@ -42,39 +39,42 @@ export class CartService {
 
   clearCart() {
     this.cartItems = [];
-    localStorage.removeItem("Cart");    
+    localStorage.removeItem("Cart");
   }
 
   getTotalQuantity(): number {
     var sum: number = 0;
-    this.cartItems.forEach(element => {
-      sum += element.count
+    this.cartItems.forEach((element) => {
+      sum += element.count;
     });
     return sum;
   }
 
   plusOne(id: number) {
-    this.cartItems.find(p => p.product.id == id).count++;
-    localStorage.setItem("Cart",JSON.stringify(this.cartItems));
+    this.cartItems.find((p) => p.product.id == id).count++;
+    localStorage.setItem("Cart", JSON.stringify(this.cartItems));
   }
 
   minusOne(id: number) {
-    if (this.cartItems.find(p => p.product.id == id).count > 1) {
-      this.cartItems.find(p => p.product.id == id).count--;
+    if (this.cartItems.find((p) => p.product.id == id).count > 1) {
+      this.cartItems.find((p) => p.product.id == id).count--;
     }
-    localStorage.setItem("Cart",JSON.stringify(this.cartItems));
+    localStorage.setItem("Cart", JSON.stringify(this.cartItems));
   }
+  
   removeItem(id: number) {
-    var index = this.cartItems.indexOf(this.cartItems.find(p => p.product.id == id));
+    var index = this.cartItems.indexOf(
+      this.cartItems.find((p) => p.product.id == id)
+    );
     this.cartItems.splice(index, 1);
-    localStorage.setItem("Cart",JSON.stringify(this.cartItems));
+    localStorage.setItem("Cart", JSON.stringify(this.cartItems));
   }
-  getTotalPrice() : number {
-    var sum:number= 0;
+
+  getTotalPrice(): number {
+    var sum: number = 0;
     for (var i = 0; i < this.cartItems.length; i++) {
       sum += this.cartItems[i].product.price * this.cartItems[i].count;
     }
     return sum;
   }
-
 }

@@ -1,73 +1,72 @@
-input{
-    background-color: var(--main-bg-color) !important;    
-    box-shadow: inset 4px 4px 7px var(--bg-darkshadow), 
-             inset -4px -4px 7px var(--bg-lightshadow);
-    color: var(--main-text-color) !important; 
-    border: none !important;
-    border-radius: 10px;
+input {
+  background-color: var(--main-bg-color) !important;
+  box-shadow: inset 4px 4px 7px var(--bg-darkshadow),
+    inset -4px -4px 7px var(--bg-lightshadow);
+  color: var(--main-text-color) !important;
+  border: none !important;
+  border-radius: 10px;
 }
-input:focus{    
-    outline: none !important;
-    outline-style: none !important;
-    border: none !important;
-    box-shadow: inset 4px 4px 7px var(--bg-darkshadow), 
-                inset -4px -4px 7px rgba(255, 166, 0, 0.04);
+input:focus {
+  outline: none !important;
+  outline-style: none !important;
+  border: none !important;
+  box-shadow: inset 4px 4px 7px var(--bg-darkshadow),
+    inset -4px -4px 7px rgba(255, 166, 0, 0.04);
 }
-input:-webkit-autofill {    
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
 }
-input:-webkit-autofill:focus {    
-    -webkit-animation-name: autofill-focus;
-    -webkit-animation-fill-mode: both;
+input:-webkit-autofill:focus {
+  -webkit-animation-name: autofill-focus;
+  -webkit-animation-fill-mode: both;
 }
 @-webkit-keyframes autofill {
-    to {
-        color: var(--main-text-color);
-        background: transparent;
-    }
+  to {
+    color: var(--main-text-color);
+    background: transparent;
+  }
 }
 @-webkit-keyframes autofill-focus {
-    to {
-        background: transparent;
-    }
+  to {
+    background: transparent;
+  }
 }
 input.ng-touched.ng-invalid {
-    box-shadow: inset 8px 8px 16px var(--bg-darkshadow), 
-                inset -8px -8px 16px rgba(255, 99, 71, 0.22);
+  box-shadow: inset 8px 8px 16px var(--bg-darkshadow),
+    inset -8px -8px 16px rgba(255, 99, 71, 0.22);
 }
 input.ng-touched.ng-valid {
-   background-color: rgba(0, 255, 76, 0.13);
-   box-shadow: inset 8px 8px 16px var(--bg-darkshadow), 
-                inset -8px -8px 16px rgba(152, 251, 152, 0.22);
+  background-color: rgba(0, 255, 76, 0.13);
+  box-shadow: inset 8px 8px 16px var(--bg-darkshadow),
+    inset -8px -8px 16px rgba(152, 251, 152, 0.22);
 }
-input[type="submit"]{
-    background-color: var(--main-bg-color);
-    box-shadow:  9px 9px 16px var(--bg-darkshadow), 
-             -9px -9px 16px var(--bg-lightshadow),             
-             inset -4px -4px 9px var(--bg-darkshadow),
-             inset 4px 4px 9px var(--bg-lightshadow);
-    outline: none !important;
-    outline-style: none;
+input[type="submit"] {
+  background-color: var(--main-bg-color);
+  box-shadow: 9px 9px 16px var(--bg-darkshadow),
+    -9px -9px 16px var(--bg-lightshadow),
+    inset -4px -4px 9px var(--bg-darkshadow),
+    inset 4px 4px 9px var(--bg-lightshadow);
+  outline: none !important;
+  outline-style: none;
 }
-input[type="submit"]:hover{
-    color: var(--main-text-color) !important;
-    text-shadow: 1px 1px 2px var(--main-text-color);
-    box-shadow:  4px 4px 9px var(--bg-darkshadow), 
-             -4px -4px 9px var(--bg-lightshadow),             
-             inset 4px 4px 9px var(--main-bg-color),
-             inset -4px -4px 9px rgba(255, 166, 0, 0.04);
+input[type="submit"]:hover {
+  color: var(--main-text-color) !important;
+  text-shadow: 1px 1px 2px var(--main-text-color);
+  box-shadow: 4px 4px 9px var(--bg-darkshadow),
+    -4px -4px 9px var(--bg-lightshadow), inset 4px 4px 9px var(--main-bg-color),
+    inset -4px -4px 9px rgba(255, 166, 0, 0.04);
 }
-input[type="submit"]:disabled{
-    color: lightsteelblue !important;    
-    text-shadow: none;
-    box-shadow: none;
-    box-shadow:  4px 4px 9px var(--bg-darkshadow), 
-             -4px -4px 9px var(--bg-lightshadow);
+input[type="submit"]:disabled {
+  color: lightsteelblue !important;
+  text-shadow: none;
+  box-shadow: none;
+  box-shadow: 4px 4px 9px var(--bg-darkshadow),
+    -4px -4px 9px var(--bg-lightshadow);
 }
 .input-label {
-    font-size: 8.5pt;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 0;
+  font-size: 8.5pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }

@@ -1,36 +1,35 @@
-button{
-    color: #708094;
-    outline: none !important;
-    outline-style: none;
-    box-shadow: none;
+button {
+  color: #708094;
+  outline: none !important;
+  outline-style: none;
+  box-shadow: none;
 }
-button:hover{
-    color: var(--main-text-color);
+button:hover {
+  color: var(--main-text-color);
 }
-.active-btn{    
-    background-color: var(--main-bg-color);
-    border-radius: inherit;
-    text-shadow: none;
-    color: #bfc9da;
-    box-shadow:  6px 6px 11px var(--bg-darkshadow), 
-             -6px -6px 11px var(--bg-lightshadow);
+.active-btn {
+  background-color: var(--main-bg-color);
+  border-radius: inherit;
+  text-shadow: none;
+  color: #bfc9da;
+  box-shadow: 6px 6px 11px var(--bg-darkshadow),
+    -6px -6px 11px var(--bg-lightshadow);
 }
-.button-wraper{
-    background-color: var(--main-bg-color);
-    box-shadow:  3px 3px 5px var(--bg-darkshadow), 
-             -3px -3px 5px var(--bg-lightshadow),             
-             inset 3px 3px 5px var(--bg-darkshadow),
-             inset -3px -3px 5px var(--bg-lightshadow);
-             border: 2px solid var(--main-bg-color); 
-    outline: none !important;
-    outline-style: none;
-    border-radius: 10px;
-    padding: 0;
+.button-wraper {
+  background-color: var(--main-bg-color);
+  box-shadow: 3px 3px 5px var(--bg-darkshadow),
+    -3px -3px 5px var(--bg-lightshadow), inset 3px 3px 5px var(--bg-darkshadow),
+    inset -3px -3px 5px var(--bg-lightshadow);
+  border: 2px solid var(--main-bg-color);
+  outline: none !important;
+  outline-style: none;
+  border-radius: 10px;
+  padding: 0;
 }
-.mainplace{
-    color: var(--main-text-color);
-    border-radius: 20px;
-    margin: 0;
-    box-shadow:  9px 9px 16px var(--bg-darkshadow), 
-             -9px -9px 16px var(--bg-lightshadow);
+.mainplace {
+  color: var(--main-text-color);
+  border-radius: 20px;
+  margin: 0;
+  box-shadow: 9px 9px 16px var(--bg-darkshadow),
+    -9px -9px 16px var(--bg-lightshadow);
 }

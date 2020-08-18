@@ -1,21 +1,20 @@
-.image-wraper{
-  box-shadow: inset 6px 6px 10px var(--bg-darkshadow), 
-              inset -6px -6px 10px var(--bg-lightshadow);
+.image-wraper {
+  box-shadow: inset 6px 6px 10px var(--bg-darkshadow),
+    inset -6px -6px 10px var(--bg-lightshadow);
   padding: 10px;
-  border-radius: 12px; 
-       
+  border-radius: 12px;
 }
-.product-img{   
+.product-img {
   width: 100%;
-    height: auto;
-    border-radius: 10px; 
-    box-shadow: 2px 2px 2px var(--bg-darkshadow), 
-              -2px -2px 2px var(--bg-lightshadow);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--bg-darkshadow),
+    -2px -2px 2px var(--bg-lightshadow);
 }
-.mainplace{
+.mainplace {
   color: var(--main-text-color);
   border-radius: 20px;
   margin: 0;
-  box-shadow:  9px 9px 16px var(--bg-darkshadow), 
-           -9px -9px 16px var(--bg-lightshadow);
+  box-shadow: 9px 9px 16px var(--bg-darkshadow),
+    -9px -9px 16px var(--bg-lightshadow);
 }

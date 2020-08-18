@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoriesService } from '../app/services/categories.service'
-import { CartService } from './services/cart.service';
-import { LoginService } from './services/login.service';
-import { User } from './models/user';
-import { Notice } from './models/notice';
-import { NotificationService } from './services/notification.service';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Category } from './models/category';
-import { Subcategory } from './models/subcategory';
-import { SearchResult } from './models/searchResult';
-import { Product } from './models/product';
-import { Router } from '@angular/router';
-import { ProductsService } from './services/products.service';
+import { Component, OnInit } from "@angular/core";
+import { CategoriesService } from "../app/services/categories.service";
+import { CartService } from "./services/cart.service";
+import { LoginService } from "./services/login.service";
+import { User } from "./models/user";
+import { Notice } from "./models/notice";
+import { NotificationService } from "./services/notification.service";
+import { FormGroup, FormControl } from "@angular/forms";
+import { Category } from "./models/category";
+import { Subcategory } from "./models/subcategory";
+import { SearchResult } from "./models/searchResult";
+import { Product } from "./models/product";
+import { Router } from "@angular/router";
+import { ProductsService } from "./services/products.service";
 
 interface Options {
   products: Product[];
@@ -19,12 +19,12 @@ interface Options {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  title = 'TrueStore';
+  title = "TrueStore";
   categories: Category[];
   subcategories: Subcategory[];
   numberInCart: Number;
@@ -54,14 +54,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.getCategories();
-    this.searchControl.valueChanges.subscribe(async value => {
+    this.searchControl.valueChanges.subscribe(async (value) => {
       this.options = await this.getOptions(value);
       this.productOptions = this.options.products.slice(0, 4);
-      this.subcategoryOptions = this.options.subcategories.slice(0, 2)
+      this.subcategoryOptions = this.options.subcategories.slice(0, 2);
     });
-
   }
   private async getOptions(value: string): Promise<SearchResult> {
     if (value == "") {
@@ -80,24 +78,23 @@ export class AppComponent implements OnInit {
   }
 
   getCategories() {
-    this.categoriesService.getCategories().subscribe((a) => this.categories = a);
+    this.categoriesService
+      .getCategories()
+      .subscribe((a) => (this.categories = a));
   }
+
   getSubcategories(id: number) {
     this.categoriesService.getSubcategories(id);
   }
 
   search() {
     if (this.searchControl.value && this.searchControl.value != " ") {
-      this.router.navigate(
-        ['/Products'],
-        {
-          queryParams: {
-            'searchString': this.searchControl.value,
-          }
-        }
-      );
+      this.router.navigate(["/Products"], {
+        queryParams: {
+          searchString: this.searchControl.value,
+        },
+      });
     }
-
   }
 
   logOut() {
@@ -108,6 +105,11 @@ export class AppComponent implements OnInit {
     this.notificationService.deleteNotice(index);
   }
 
-  showMenu() { this.categoriesService.showMenu() }
-  hideMenu() { this.categoriesService.hideMenu() }
+  showMenu() {
+    this.categoriesService.showMenu();
+  }
+  
+  hideMenu() {
+    this.categoriesService.hideMenu();
+  }
 }

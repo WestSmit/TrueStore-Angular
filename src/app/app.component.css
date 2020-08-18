@@ -1,127 +1,123 @@
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: var(--bg-darkshadow)a8; /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: var(--bg-darkshadow) a8; /* Black w/ opacity */
 }
-.modal-window{
-    min-height: 512px;    
-    box-shadow:  -4px -4px 9px var(--bg-darkshadow);
+.modal-window {
+  min-height: 512px;
+  box-shadow: -4px -4px 9px var(--bg-darkshadow);
 }
-.badge-custom{
-   position: absolute;
-   margin-right: -8px;
-   margin-top: -8px;
-   padding: 0.30em 0.50em;
-   text-align: center;
-   vertical-align: middle;
-   box-shadow:  2px 2px 3px #1e1f29,
-   -2px -2px 3px #333747;
-   background-color: var(--main-bg-color);
+.badge-custom {
+  position: absolute;
+  margin-right: -8px;
+  margin-top: -8px;
+  padding: 0.3em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 2px 2px 3px #1e1f29, -2px -2px 3px #333747;
+  background-color: var(--main-bg-color);
 }
-.notifications{
-   display: none;
-   margin-top: 45px;
-   padding-top: 20px;
-   position: absolute;
-   min-height: 100px;
-   width: 300px;
-   z-index: 3;   
+.notifications {
+  display: none;
+  margin-top: 45px;
+  padding-top: 20px;
+  position: absolute;
+  min-height: 100px;
+  width: 300px;
+  z-index: 3;
 }
 .category-item {
-   padding: 1em;
-   display: block;
+  padding: 1em;
+  display: block;
 }
 .subcategory-item {
-   padding: 0.4em;
-   display: block;
+  padding: 0.4em;
+  display: block;
 }
 ::ng-deep .mat-form-field-wrapper {
-   padding: 0px !important;
- }
+  padding: 0px !important;
+}
 ::ng-deep .mat-form-field-underline {
-   display: none !important;
+  display: none !important;
 }
 
-.search-input{
-   font-size: 18px !important;
-   color: var(--style-text-color);    
-   caret-color: var(--style-text-color) !important;
+.search-input {
+  font-size: 18px !important;
+  color: var(--style-text-color);
+  caret-color: var(--style-text-color) !important;
 }
-.search-line{
-   background-color: var(--main-bg-color);
-   box-shadow: inset 8px 8px 14px var(--bg-darkshadow), 
-            inset -8px -8px 14px var(--bg-lightshadow);
-   outline: none !important;
+.search-line {
+  background-color: var(--main-bg-color);
+  box-shadow: inset 8px 8px 14px var(--bg-darkshadow),
+    inset -8px -8px 14px var(--bg-lightshadow);
+  outline: none !important;
 }
 .search-line::ng-deep .ng-star-inserted {
-   color: var(--main-text-color); 
- }
-.search-line:focus-within{
-   box-shadow: inset 8px 8px 14px var(--bg-darkshadow), 
-            inset -8px -8px 14px #473729;
+  color: var(--main-text-color);
 }
-#categoriesButton{
-   margin: 0;
-   background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    box-shadow:  -4px -4px 12px var(--bg-darkshadow), 
-             4px 4px 12px var(--bg-lightshadow);
-    outline: none !important;
-    outline-style: none;
+.search-line:focus-within {
+  box-shadow: inset 8px 8px 14px var(--bg-darkshadow),
+    inset -8px -8px 14px #473729;
 }
-.icon-shadow{
-   border-radius: 14px;
-   padding-top: 7px;
-   margin-top: -3px !important;
-   display: block;
-   height: 28px;
-   width: 28px;
-   text-align: center;
-   box-shadow:  3px 3px 5px var(--bg-darkshadow),
-               -3px -3px 5px var(--bg-lightshadow);
+#categoriesButton {
+  margin: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  box-shadow: -4px -4px 12px var(--bg-darkshadow),
+    4px 4px 12px var(--bg-lightshadow);
+  outline: none !important;
+  outline-style: none;
 }
-.category-item:hover .icon-shadow{
-   color: #484d64;
-   box-shadow: 1px 1px 5px var(--bg-darkshadow),
-               -1px -1px 5px var(--bg-lightshadow),
-               inset 1px 1px 5px var(--bg-darkshadow),
-               inset -1px -1px 5px var(--bg-lightshadow);
-
+.icon-shadow {
+  border-radius: 14px;
+  padding-top: 7px;
+  margin-top: -3px !important;
+  display: block;
+  height: 28px;
+  width: 28px;
+  text-align: center;
+  box-shadow: 3px 3px 5px var(--bg-darkshadow),
+    -3px -3px 5px var(--bg-lightshadow);
 }
-.btn-icon{
-   border-radius: 14px;
-   padding: 4px;
-   min-width: 60px;
-   margin-top: -3px !important;
-   display: block;
-   text-align: center;
-   box-shadow:  3px 3px 5px var(--bg-darkshadow),
-               -3px -3px 5px var(--bg-lightshadow);
+.category-item:hover .icon-shadow {
+  color: #484d64;
+  box-shadow: 1px 1px 5px var(--bg-darkshadow),
+    -1px -1px 5px var(--bg-lightshadow), inset 1px 1px 5px var(--bg-darkshadow),
+    inset -1px -1px 5px var(--bg-lightshadow);
 }
-.btn-icon:hover{
-   color: var(--style-text-color);
-    text-shadow: 1px 1px 2px var(--style-text-color);
-    box-shadow:  1px 1px 2px var(--bg-darkshadow), 
-             -1px -1px 2px var(--bg-lightshadow),
-             inset 2px 2px 8px var(--bg-darkshadow),
-             inset -2px -2px 8px #534436;
+.btn-icon {
+  border-radius: 14px;
+  padding: 4px;
+  min-width: 60px;
+  margin-top: -3px !important;
+  display: block;
+  text-align: center;
+  box-shadow: 3px 3px 5px var(--bg-darkshadow),
+    -3px -3px 5px var(--bg-lightshadow);
 }
-.notice-board{
-   border: 2px solid var(--style-text-color);
-   border-radius: 8px;
-   background-color: var(--main-bg-color);
-   box-shadow: 10px 10px 20px var(--bg-darkshadow);
+.btn-icon:hover {
+  color: var(--style-text-color);
+  text-shadow: 1px 1px 2px var(--style-text-color);
+  box-shadow: 1px 1px 2px var(--bg-darkshadow),
+    -1px -1px 2px var(--bg-lightshadow), inset 2px 2px 8px var(--bg-darkshadow),
+    inset -2px -2px 8px #534436;
 }
-.notice a{
-   color: var(--style-text-color) !important;
+.notice-board {
+  border: 2px solid var(--style-text-color);
+  border-radius: 8px;
+  background-color: var(--main-bg-color);
+  box-shadow: 10px 10px 20px var(--bg-darkshadow);
 }
-.notice a:hover{
-   color: var(--style-text-color) !important;
-   text-decoration: underline !important;
+.notice a {
+  color: var(--style-text-color) !important;
+}
+.notice a:hover {
+  color: var(--style-text-color) !important;
+  text-decoration: underline !important;
 }
