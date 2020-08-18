@@ -1,7 +1,5 @@
-# TrueStore
-## Angular pet project
-
-To run application locally: 
+# Angular pet project
+### To run application locally: 
 
 0. Install .NET Core 3.1(for API), latest node.js.
 1. Clone or extract API project([TrueStore-API](https://github.com/WestSmit/TrueStore-API)) into your local directory.
