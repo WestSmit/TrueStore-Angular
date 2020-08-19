@@ -9,7 +9,7 @@
 5. Open http://localhost:4200/ in your browser.
 6. Login using username: `JohnDou`, password: `password`.
 
-<img width=210px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_1.png> <img width=210px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_2.png> <img width=210px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_3.png> <img width=210px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_4.png>
+<img width=200px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_1.png> <img width=200px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_2.png> <img width=200px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_3.png> <img width=200px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_4.png>
 
 <img src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_1.png>
 <img src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_2.png>
