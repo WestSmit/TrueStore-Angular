@@ -7,9 +7,9 @@
 3. Execute `dotnet run` inside API directory.
 4. Execute `npm install` and `ng serve` in Angular directory.
 5. Open http://localhost:4200/ in your browser.
-6. Login using username: "JohnDou", password: "password".
+6. Login using username: `JohnDou`, password: `password`.
 
-<img width=230px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_1.png> <img width=230px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_2.png> <img width=230px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_3.png> <img width=230px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_4.png>
+<img width=220px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_1.png> <img width=220px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_2.png> <img width=220px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_3.png> <img width=220px src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_phone_4.png>
 
 <img src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_1.png>
 <img src=https://github.com/WestSmit/TrueStore-Angular/blob/master/src/assets/screenshot_2.png>
