@@ -1,14 +1,14 @@
     <div class="font-weight-bold">Personal information</div>
     <hr>
     <div class="row justify-content-around">
-        <div class="col-5 text-justify font-weight-normal">
+        <div class="col-12 col-lg-5 text-justify font-weight-normal">
             Here contains your personal information. You can update it by changing the values ​​in the form
             fields and clicking on the button
 
             <div *ngIf="infoFormResult && infoFormCompleted" class="alert alert-success mt-2 p-2">{{infoformMessage}}</div>
             <div *ngIf="!infoFormResult && infoFormCompleted" class="alert alert-danger mt-2 p-2">{{infoformMessage}}</div>
         </div>
-        <form class="col-4" [formGroup]="infoForm" (ngSubmit)="updateInfo()">
+        <form class="col-12 col-lg-4" [formGroup]="infoForm" (ngSubmit)="updateInfo()">
             <label for="inputFirstName" class="input-label">First name</label>
             <input type="text" id="inputFirstName" class="form-control mb-2" placeholder="Firstname"
                 formControlName="firstName">
@@ -29,11 +29,11 @@
                 class="btn btn-block mt-3 rounded-pill" type="submit" value="Save">
         </form>
     </div>
+    <hr class="border-secondary">
 
     <div class="font-weight-bold"> E-mail address</div>
-    <hr>
     <div class="row justify-content-around">
-        <div class="col-5">
+        <div class="col-12 col-lg-5">
             Here contains your personal information. You can update it by changing the values ​​in the form
             fields and clicking on the button
 
@@ -43,7 +43,7 @@
             <div *ngIf="!emailFormResult && emailFormCompleted" class="alert alert-danger mt-2 p-2">{{emailFormMessage}}</div>
 
         </div>
-        <form class="col-4" [formGroup]="emailForm" (ngSubmit)="changeEmail()">
+        <form class="col-12 col-lg-4" [formGroup]="emailForm" (ngSubmit)="changeEmail()">
             <label for="inputEmail" class="input-label">Email address</label>
             <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email address"
                 formControlName="email">
@@ -52,17 +52,17 @@
                 class="btn btn-block  mt-3 rounded-pill" type="submit" value="Change">
         </form>
     </div>
+    <hr class="border-secondary">
     <div class="font-weight-bold">Password</div>
-    <hr>
     <div class="row justify-content-around">
-        <div class="col-5">
+        <div class="col-12 col-lg-5">
             Here contains your personal information. You can update it by changing the values ​​in the form
             fields and clicking on the button
             <div *ngIf="passwordFormResult && passwordFormCompleted" class="alert alert-success mt-2 p-2">{{passwordFormMessage}}</div>
             <div *ngIf="!passwordFormResult && passwordFormCompleted" class="alert alert-danger mt-2 p-2">{{passwordFormMessage}}</div>
 
         </div>
-        <form class="col-4" [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+        <form class="col-12 col-lg-4" [formGroup]="passwordForm" (ngSubmit)="changePassword()">
             <label for="inputPassword" class="input-label">Current password</label>
             <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Current password"
                 formControlName="currentPassword">

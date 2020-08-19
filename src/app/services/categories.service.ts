@@ -44,6 +44,7 @@ export class CategoriesService {
       btn.style.position = "Absolute";
       btn.style.width = "100%";
       btn.style.zIndex = "3";
+      btn.style.borderBottom ="none"
     }
   }
 
@@ -56,6 +57,7 @@ export class CategoriesService {
 
     modal.style.display = "none";
     menu.style.position = "static";
-    btn.style.position = "static";
+    btn.style.position = "static";    
+    btn.style.borderBottom ="2px solid var(--style-text-color)"
   }
 }

@@ -1,19 +1,18 @@
 <div class="row p-0 m-0 mt-0 mt-lg-3">
-  <div class="col col-lg-3 col-sm-12 p-0 border-0 order-last order-lg-first mt-5 mt-lg-0">
+  <div class="col col-lg-3 col-12 p-0 border-0 order-last order-lg-first">
 
-    <a class="d-none d-lg-block p-3 h5 text-uppercase"
-      (mouseover)="showMenu()" (mouseleave)="hideMenu()" id="categoriesButton">
+    <a class="d-none d-lg-block p-3 h5 text-uppercase m-0" (mouseover)="showMenu()" (mouseleave)="hideMenu()"
+      id="categoriesButton">
       Shop by Category
-      
       <i class="fa fa-fw fa-list-ul float-right col-2"></i>
     </a>
 
-    <a class="border-bottom border-dark bg-color d-block d-lg-none p-3 h5 text-uppercase m-0 text-secondary"
-      data-toggle="collapse" href="#multiCollapse" role="button" aria-expanded="false" aria-controls="multiCollapse">
+    <a class="d-block d-lg-none m-0 p-2 h5 text-uppercase" data-toggle="collapse" href="#multiCollapse" role="button"
+      aria-expanded="false" aria-controls="multiCollapse">
       Shop by Category
       <i class="fa fa-fw fa-list-ul float-right pt-1"></i>
     </a>
-    <div class="collapse multi-collapse " id="multiCollapse">
+    <div class="d-lg-none collapse multi-collapse " id="multiCollapse">
       <a class="d-block p-3 m-0" id="categoryItem" *ngFor="let category of categories"
         (mouseover)="getSubcategories(category.id)" (click)="showMenu()">
         {{category.name}}
@@ -22,62 +21,61 @@
     </div>
   </div>
 
-  <div class="col col-lg-9 col-12 pl-lg-3 pl-0 order-first order-lg-last mb-lg-0 pr-0 align-middle">
-    <div class="row form-search m-0 mt-0 mt-lg-0 justify-content-between">
-      <form class="col-12 col-lg-8 p-0 mt-2 mt-lg-0 ml-2 ml-lg-0 d-flex flex-row" (ngSubmit)="search()">
+  <div class="col-lg-9 col-12 pl-lg-3 pl-0 order-first order-lg-last mb-lg-0 pr-0 align-middle">
+    <div class="row form-search m-0 mt-0 mt-lg-0 justify-content-between h-100">
+      <form class="col-12 col-lg-8 order-last order-lg-first d-flex flex-row p-2 p-lg-0" (ngSubmit)="search()">
         <mat-form-field class="w-75 pr-4 pl-4 rounded-pill p-1 search-line">
           <input class="mb-0 search-input" type="text" placeholder="Search" aria-label="Search"
             [formControl]="searchControl" [matAutocomplete]="auto" matInput>
           <mat-autocomplete #auto="matAutocomplete" class="mt-2">
-            <mat-option [routerLink]="['Products']" [queryParams]="{subcategoryId: subc.id}" *ngFor="let subc of subcategoryOptions">
+            <mat-option [routerLink]="['Products']" [queryParams]="{subcategoryId: subc.id}"
+              *ngFor="let subc of subcategoryOptions">
               <i class="fa fa-fw fa-chevron-right"></i>
-              <span >{{subc.name}}</span> 
+              <span>{{subc.name}}</span>
             </mat-option>
             <mat-option *ngFor="let product of productOptions" [value]="product.name">
               <img class="align-middle mr-2" aria-hidden src="/assets/imgs/{{product.previewImg}}" height="25">
-              <span >{{product.name}}</span>
+              <span>{{product.name}}</span>
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
         <button class="border-0 rounded-pill ml-2 font-weight-normal flex-fill" type="submit">
           <i class="fa fa-fw fa-search"></i>
-          <div class="d-none d-lg-inline ">
-            Search
-          </div>
+          <div class="d-none d-lg-inline">Search</div>
         </button>
       </form>
-      <div class="col-lg-4 col-12 order-first order-lg-last d-flex flex-row-reverse p-0">
-
-        <div class="m-0 p-0 d-flex" *ngIf="isLoggedIn; else noLoogedIn">
-          <a class="ml-2 text-center pt-2 btn-icon" href="#" routerLink="MyAccount/Details">
-            <i class="fa fa-2x fa-fw fa-user-o"></i>
-            <br>
-            <div class="d-block text-center m-0">{{currentUser.firstName}}</div>
-          </a>
-          <a class="ml-3 text-center pt-2 btn-icon" (click)="logOut()" href="#">
-            <i class="fa fa-2x fa-fw fa-sign-out "></i>
-            <br>
-            <div class="d-block text-center m-0 p-0">SignOut</div>
-          </a>
-        </div>
-
-        <ng-template #noLoogedIn>
-          <a class="h-100 ml-3 text-center pt-2 btn-icon" href="#"
-            onclick="$('#SignUpModal').show()">
-            <i class="fa fa-2x fa-fw fa fa-user-plus"></i>
-            <br>
-            <div class="d-block text-center m-0 p-0">SignUp</div>
-          </a>
-          <a class="h-100 ml-3 text-center pt-2 btn-icon"
-            onclick="$('#SignInModal').show()" href="#">
-            <i class="fa fa-2x fa-fw fa-sign-in "></i>
-            <br>
-            <div class="d-block text-center m-0 p-0">SignIn</div>
-          </a>
-
-        </ng-template>
-
-        <a class="h-100 text-center mr-2 pt-2 btn-icon" routerLink="Cart">
+      <div class="col-lg-4 col-12 mt-3 mt-lg-0 order-first order-lg-last d-flex flex-row-reverse 
+        justify-content-between pl-lg-3 pr-lg-0 pt-0 pb-0">
+        
+        <a *ngIf="isLoggedIn"
+          class="h-100 text-center pt-2 btn-icon" (click)="logOut()" href="#">
+          <i class="fa fa-2x fa-fw fa-sign-out"></i>
+          <br>
+          <div class="d-block text-center m-0 p-0">SignOut</div>
+        </a>
+        
+        <a *ngIf="isLoggedIn"
+          class="h-100 text-center pt-2 btn-icon" href="#" routerLink="MyAccount/Details">
+          <i class="fa fa-2x fa-fw fa-user-o"></i>
+          <br>
+          <div class="d-block text-center m-0 p-0">{{currentUser.firstName}}</div>
+        </a>
+        
+        <a *ngIf="!isLoggedIn"
+          class=" h-100 text-center pt-2 btn-icon" href="#" onclick="$('#SignUpModal').show()">
+          <i class="fa fa-2x fa-fw fa fa-user-plus"></i>
+          <br>
+          <div class="d-block text-center m-0 p-0">SignUp</div>
+        </a>
+        
+        <a *ngIf="!isLoggedIn"
+          class="h-100 text-center pt-2 btn-icon" onclick="$('#SignInModal').show()" href="#">
+          <i class="fa fa-2x fa-fw fa-sign-in "></i>
+          <br>
+          <div class="d-block text-center m-0 p-0">SignIn</div>
+        </a>
+        
+        <a class="h-100 text-center pt-2 btn-icon" routerLink="Cart">
           <i class="fa fa-2x fa-fw fa-cart-arrow-down"></i>
           <span class="badge badge-pill badge-custom color-style"
             *ngIf="numberInCart > 0;else noOneInCart">{{numberInCart}}</span>
@@ -87,7 +85,8 @@
           <br>
           <div class="d-block text-center m-0 p-0 align-bottom">Cart</div>
         </a>
-        <a class="h-100 text-center mr-3 pt-2 btn-icon" onmouseover="$('#notifications').show();"
+        
+        <a class="h-100 text-center pt-2 btn-icon" onmouseover="$('#notifications').show();"
           onmouseleave="$('#notifications').hide();">
           <i class="fa fa-2x fa-fw fa fa fa-bell-o"></i>
           <span class="badge badge-pill badge-custom color-style"
@@ -100,18 +99,18 @@
         </a>
 
         <div id="notifications" class="notifications" onmouseover="$('#notifications').show();"
-        *ngIf="notices.length > 0"
-          onmouseleave="$('#notifications').hide();">
-          <div class="notice-board"> 
+          *ngIf="notices.length > 0" onmouseleave="$('#notifications').hide();">
+          <div class="notice-board">
             <div class="p-2 mb-2 notice" *ngFor="let notice of notices; index as i">
-            <button type="button" class="btn-close float-right" aria-label="Close" (click)="deleteNotice(i)">
-              <span aria-hidden="true" >&times;</span>
-            </button>
-            <div class="toast-body small color-light">{{notice.text}} <a routerLink="{{notice?.link}}">{{notice.linkName}}</a></div>
-            <hr class="m-0" style="border-top: 1px dashed tomato;">
+              <button type="button" class="btn-close float-right" aria-label="Close" (click)="deleteNotice(i)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div class="toast-body small color-light">{{notice.text}} <a
+                  routerLink="{{notice?.link}}">{{notice.linkName}}</a></div>
+              <hr class="m-0" style="border-top: 1px dashed tomato;">
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -122,7 +121,7 @@
   <div class="col col-lg-3 col-sm-12 p-0 border-0 order-last order-lg-first">
     <div id="myModal" class="modal">
       <div class="row bg-transparent p-0 ml-lg-5 pr-lg-5 mt-0 m-auto">
-        <div class="col col-3 m-0 p-0 hide d-none d-lg-block bg-color modal-window">
+        <div class="col col-3 m-0 p-0 hide d-none d-lg-block bg-color modal-window border-left-bottom">
 
           <div class="d-none d-lg-block " id="categoriesMenu" (mouseover)="showMenu()" (mouseleave)="hideMenu()">
             <a class="category-item" id="categoryItem" *ngFor="let category of categories"
@@ -133,10 +132,11 @@
           </div>
 
         </div>
-        <div class="col col-10 col-lg-7 bg-color m-lg-0 p-3 border-0 m-auto" id="modal-window"
-          (mouseleave)="hideMenu()" (mouseover)="showMenu()">
-          <a class="subcategory-item col-lg-4 col-12" [routerLink]="['Products']" [queryParams]="{subcategoryId: sc.id}" routerLinkActive="active"
-            (click)="hideMenu()" *ngFor="let sc of subcategories" onclick="$('#multiCollapse').collapse('hide')">
+        <div class="col col-12 col-lg-7 bg-color m-lg-0 p-3 m-auto border-top-right-bottom " id="modal-window" (mouseleave)="hideMenu()"
+          (mouseover)="showMenu()">
+          <a class="subcategory-item col-lg-4 col-12" [routerLink]="['Products']" [queryParams]="{subcategoryId: sc.id}"
+            routerLinkActive="active" (click)="hideMenu()" *ngFor="let sc of subcategories"
+            onclick="$('#multiCollapse').collapse('hide')">
             {{sc.name}}
           </a>
         </div>
@@ -146,4 +146,3 @@
 </div>
 <app-login></app-login>
 <router-outlet></router-outlet>
-
